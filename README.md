@@ -37,5 +37,30 @@ _What questions (from above) can be answered using the data in this dataset?_
 
 
 **Data Source 3:**
+_Where did you download the data (e.g., a web URL)?_
+Web url from Seattle.gov 
+https://data.seattle.gov/Public-Safety/Seattle-Crime-Stats-by-Police-Precinct-2008-Presen/3xqu-vnum
 
+_How was the data collected or generated?_
+This data was created based oncrime reported to the Seattle Police Department (SPD). Each row contains the record of a unique event where at least one criminal offense was reported by a member of the community or detected by an officer in the field. 
+The data set utilizes Uniform Crime Report (UCR) summary statistics and National Incident Based Reporting System (NIBRS) that was filed under FBI.
+
+_Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?_
+The data was cololected by Seattle Police Department (SPD).
+The data is about offenses and offense categorization that was reported to FBI.
+This updated process includes all records of crime reports logged in the Departments Records Management System (RMS) since 2008.
+
+_How many observations (rows) are in your data?_
+523,591 rows
+
+_How many features (columns) are in the data?_
+ 11
+
+_What questions (from above) can be answered using the data in this dataset?_
+1. Number of crimes that happen each day
+2. Type of crime (Categorization of crime)
+3. Frequent type of crime that happens in each region of Seattle
+4. Trend of crime 
+5. Occured date of crime & count of crime/day
+6. Reported time 
 
