@@ -63,7 +63,7 @@ _What questions (from above) can be answered using the data in this dataset?_
 
 Question 3 from above can be answered using the data in this dataset.
 
-**Data Source 3: https://data.seattle.gov/Public-Safety/Call-Data/33kz-ixgy**
+**Data Source 3: https://data.seattle.gov/Public-Safety/Crime-Data/4fs7-3vj5**
 
 Where did you download the data (e.g., a web URL)? 
 
