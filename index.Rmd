@@ -18,11 +18,10 @@ We are interested in the topic because identifying patterns in past crimes not o
 To obtain credible data,  we collected our data sources are from Seattle.gov. The Seattle Police Department created all three data that we used for the project. First data  focuses on Rishi K..
 second data highlights ...Yunwei L, and third data underlines the type of crime associated with locations in Seattle.  The three unique data sets allow us to analyze the data comprehensively. 
 
+
 ```{r echo=FALSE}
 bar_chart
 ```
-
-#ABC
 
 ```{r echo=FALSE}
 graph_one
