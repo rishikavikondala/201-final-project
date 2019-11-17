@@ -1,29 +1,29 @@
 ---
-title: "index"
+title: "Mass Shooting Report"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+source('./scripts/chart3.R')
 source('./scripts/graphone.R')
 ```
 
-## R Markdown
+## Motivation for the Project
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Seattle, one of the most popular cities in the US, is known to have a high population.  Due to its high population, crime is unavoidable in the city. Recognizing the concern, we desire to create a data visualization that visually conveys the type and location of reported crimes. 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+We are interested in the topic because identifying patterns in past crimes not only help professionals make informed decisions to combat the war with crime but also informs the general public about the critical information regarding public safety. Police officers, government officials, and others can use insights from this data to try implementing and enforcing different solutions to reduce crime rates. We believe that this type of data-driven decision making can have a positive impact on cities all around the world.
 
-```{r cars}
-summary(cars)
+To obtain credible data,  we collected our data sources are from Seattle.gov. The Seattle Police Department created all three data that we used for the project. First data  focuses on Rishi K..
+second data highlights ...Yunwei L, and third data underlines the type of crime associated with locations in Seattle.  The three unique data sets allow us to analyze the data comprehensively. 
+
+```{r echo=FALSE}
+bar_chart
 ```
 
-## Including Plots
+#ABC
 
-You can also embed plots, for example:
-
-```{r graph_one, echo=FALSE, warning=FALSE}
+```{r echo=FALSE}
 graph_one
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
