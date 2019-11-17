@@ -15,15 +15,19 @@ Seattle, one of the most popular cities in the US, is known to have a high popul
 
 We are interested in the topic because identifying patterns in past crimes not only help professionals make informed decisions to combat the war with crime but also informs the general public about the critical information regarding public safety. Police officers, government officials, and others can use insights from this data to try implementing and enforcing different solutions to reduce crime rates. We believe that this type of data-driven decision making can have a positive impact on cities all around the world.
 
-To obtain credible data,  we collected our data sources are from Seattle.gov. The Seattle Police Department created all three data that we used for the project. First data  focuses on Rishi K..
-second data highlights ...Yunwei L, and third data underlines the type of crime associated with locations in Seattle.  The three unique data sets allow us to analyze the data comprehensively. 
+To obtain credible data,  we collected our data sources are from Seattle.gov. The Seattle Police Department created all three data that we used for the project. Dataset 1 provides information about criminal incidents from 2008-present day, as well as the type of crime, its location, and how frequently that type occurs.
 
-```{r echo=FALSE}
-bar_chart
-```
 
-#ABC
+second data highlights ...Yunwei L, 
 
+and third data underlines the number of crimes in Seattle Neighbourhood. The three unique data sets allow us to analyze the data comprehensively. 
+
+## Crime Report from 2008-present day
 ```{r echo=FALSE}
 graph_one
+```
+
+## Number of Crime Reports in Seattle Neighborhood
+```{r echo=FALSE}
+bar_chart
 ```
