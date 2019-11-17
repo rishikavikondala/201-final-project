@@ -1,11 +1,11 @@
 ---
-title: "Mass Shooting Report"
+title: "Crime Reports in Seattle"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-source('./scripts/chart3.R')
+source('./scripts/graphthree.R')
 source('./scripts/graphone.R')
 ```
 
