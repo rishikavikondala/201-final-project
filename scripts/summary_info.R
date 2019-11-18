@@ -20,9 +20,20 @@ data3 <- fromJSON(response_text3)
 
 ## by location
 data1$abb_sector <- data1$sector
+
 one_by_loc <- data1 %>%
+  group_by(abb_sector, crime_type) %>%
+  summarize(num_crimes = n()) %>%
   group_by(abb_sector) %>%
-  summarize(num_crimes = n())
+  summarize(
+    highest_freq = max(num_crimes),
+    highest_freq_crime = crime_type[which.max(num_crimes)]
+  ) %>%
+  select(abb_sector, highest_freq, highest_freq_crime)
+
+#one_by_loc <- data1 %>%
+ # group_by(abb_sector) %>%
+  #summarize(num_crimes = n())
 
 data2$abb_sector <- substr(data2$sector, 1, 1)
 
@@ -31,14 +42,19 @@ two_by_loc <- data2 %>%
   summarize(num_calls = n()) %>%
   select(sector, abb_sector, num_calls)
 
+
 data3$abb_sector <- substr(data3$sector, 1, 1)
 
 three_by_loc <- data3 %>%
   group_by(abb_sector) %>%
-  summarize(num_crime_reported = n()) %>%
-  select(abb_sector, num_crime_reported)
+  summarize(num_primary_offenses = n()) %>%
+  select(abb_sector, num_primary_offenses)
   
 agg_table <- left_join(one_by_loc, two_by_loc, by = "abb_sector") %>%
   left_join(three_by_loc, by = "abb_sector") %>%
-  select(sector, num_crimes, num_crime_reported, num_calls)
+  select(sector, 
+         num_primary_offenses, 
+         highest_freq_crime,  
+         highest_freq,
+         num_calls)
 

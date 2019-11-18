@@ -33,7 +33,7 @@ as well as the type of crime, its location, and how frequently that type occurs.
 
 ```{r echo = FALSE}
 kable(agg_table, caption = "Crime Information by Sector", 
-      col.names = c("Sectors", "Number of Crimes", "Number of Crimes Reported to Police", "Number of Calls to Police"))
+      col.names = c("Sectors", "Number of Primary Offenses", "Most Occured Crime", "Most Occured Crime Frequency", "Number of Calls to Police"))
 ```
 
 ## Call Data of SPD Communications Center
