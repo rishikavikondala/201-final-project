@@ -45,15 +45,19 @@ and Traffic Violations. However, there are also more serious crimes such as Burg
 ```{r echo=FALSE}
 graph_one
 ```
-## ???? fix  here?
 A precinct is an area whose boundaries are determined by the police for their investigative purposes. 
 As indicated by this graph, the North precinct of Seattle is the most dangerous based on the number of 
 crimes that have occured from 2008 to present day.
 
-This data comesfrom 
-The Seattle Police Department provided this data on the Seattle.gov website. It includes information about the crime that was reported in different neighborhoods in Seattle. There are total 524k rows, and 11 columns and each row is a unique crime reported record. The visualization focused on the number of crime reports in different neighborhoods in Seattle
+
 ## Number of Crime Reports in Seattle Neighborhood
 ```{r echo=FALSE}
 bar_chart
 ```
+
+This data comesfrom 
+The Seattle Police Department provided this data on the Seattle.gov website. 
+It includes information about the crime that was reported in different neighborhoods in Seattle. 
+There are total 524k rows, and 11 columns and each row is a unique crime reported record. 
+The visualization focused on the number of crime reports in different neighborhoods in Seattle
 
