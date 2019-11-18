@@ -32,7 +32,8 @@ Dataset 1 provides information about criminal incidents from 2008-present day,
 as well as the type of crime, its location, and how frequently that type occurs.
 
 ```{r echo = FALSE}
-kable(agg_table)
+kable(agg_table, caption = "Crime Information by Sector", 
+      col.names = c("Sectors", "Number of Crimes", "Number of Calls to Police"))
 ```
 
 ## Call Data of SPD Communications Center
