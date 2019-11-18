@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: "Crime Reports in Seattle"
 output: html_document
@@ -52,8 +51,6 @@ We are interested in the topic because identifying patterns in past crimes not o
 
 To obtain credible data,  we collected our data sources are from Seattle.gov. The Seattle Police Department created all three data that we used for the project. Dataset 1 provides information about criminal incidents from 2008-present day, as well as the type of crime, its location, and how frequently that type occurs.
 
-<<<<<<< HEAD
-
 
 ```{r echo=FALSE}
 ```
@@ -61,7 +58,6 @@ To obtain credible data,  we collected our data sources are from Seattle.gov. Th
 ```{r echo = FALSE}
 pie_chart
 ```
-
 
 This data comes from Seattle Police Department's Communications Center's record of log calls, including 911 calls, etc.The pie chart shows the top 10 most common Initial Call Type received from 2008 to present day. Of these call types, the most common ones are simple Premise Checks and Traffic Violations. However, there are also more serious crimes such as Burglary and Narcotics. 
 
@@ -87,5 +83,4 @@ bar_chart
 ```{r echo=FALSE}
 graph_one
 ```
->>>>>>> b4744c5b65aa19ed0bc59e26c194e1674f4788d1
->>>>>>> 3e15e1b1561d21abf8350f1c7636fd007bf0fd99
+
