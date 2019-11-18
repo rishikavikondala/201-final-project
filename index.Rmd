@@ -7,6 +7,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 source('./scripts/graphthree.R')
 source('./scripts/graphone.R')
+source('./scripts/graphtwo.R')
 ```
 
 ## Motivation for the Project
@@ -19,7 +20,17 @@ To obtain credible data,  we collected our data sources are from Seattle.gov. Th
 
 <<<<<<< HEAD
 
-second data highlights ...Yunwei L, 
+
+```{r echo=FALSE}
+```
+## Call Data of SPD Communications Center
+```{r echo = FALSE}
+pie_chart
+```
+
+
+This data comes from Seattle Police Department's Communications Center's record of log calls, including 911 calls, etc.The pie chart shows the top 10 most common Initial Call Type received from 2008 to present day. Of these call types, the most common ones are simple Premise Checks and Traffic Violations. However, there are also more serious crimes such as Burglary and Narcotics. 
+
 
 and third data underlines the number of crimes in Seattle Neighbourhood. The three unique data sets allow us to analyze the data comprehensively. 
 

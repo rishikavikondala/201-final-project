@@ -11,8 +11,8 @@ response <- GET(uri)
 response_text <- content(response, "text")
 call_data <- fromJSON(response_text)
 
-is.data.frame(response_data)
-str(response_data)
+is.data.frame(call_data)
+str(call_data)
 
 #call_data <- read.csv(file = "data/Call_Data.csv", stringsAsFactors = FALSE)
 #crime_data <- read.csv("./data/crime_data.csv")
