@@ -5,9 +5,11 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
 source('./scripts/graphthree.R')
 source('./scripts/graphone.R')
 source('./scripts/graphtwo.R')
+source('./scripts/summary_info.R')
 ```
 
 ## Motivation for the Project
@@ -29,6 +31,9 @@ The Seattle Police Department created all three data that we used for the projec
 Dataset 1 provides information about criminal incidents from 2008-present day, 
 as well as the type of crime, its location, and how frequently that type occurs.
 
+```{r echo = FALSE}
+kable(agg_table)
+```
 
 ## Call Data of SPD Communications Center
 ```{r echo = FALSE}
