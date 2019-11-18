@@ -1,3 +1,39 @@
+<<<<<<< HEAD
+=======
+---
+title: "Crime Reports in Seattle"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source('./scripts/graphone.R')
+source('./scripts/graphthree.R')
+```
+
+## Motivation for the Project
+
+Seattle, one of the most popular cities in the US, is known to have a high population.  Due to its high population, crime is unavoidable in the city. Recognizing the concern, we desire to create a data visualization that visually conveys the type and location of reported crimes. 
+
+We are interested in the topic because identifying patterns in past crimes not only help professionals make informed decisions to combat the war with crime but also informs the general public about the critical information regarding public safety. Police officers, government officials, and others can use insights from this data to try implementing and enforcing different solutions to reduce crime rates. We believe that this type of data-driven decision making can have a positive impact on cities all around the world.
+
+To obtain credible data,  we collected our data sources are from Seattle.gov. The Seattle Police Department created all three data that we used for the project. Dataset 1 provides information about criminal incidents from 2008-present day, as well as the type of crime, its location, and how frequently that type occurs.
+
+second data highlights ...Yunwei L, 
+
+and third data underlines the number of crimes in Seattle Neighbourhood. The three unique data sets allow us to analyze the data comprehensively. 
+
+## Crime Report from 2008-present day
+```{r echo=FALSE}
+graph_one
+```
+
+## Number of Crime Reports in Seattle Neighborhood
+```{r echo=FALSE}
+bar_chart
+```
+=======
+>>>>>>> 60f3662abb569f00f3a1bcf6e8da0d98e0be3d67
 ---
 title: "Crime Reports in Seattle"
 output: html_document
@@ -18,7 +54,10 @@ We are interested in the topic because identifying patterns in past crimes not o
 
 To obtain credible data,  we collected our data sources are from Seattle.gov. The Seattle Police Department created all three data that we used for the project. Dataset 1 provides information about criminal incidents from 2008-present day, as well as the type of crime, its location, and how frequently that type occurs.
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 60f3662abb569f00f3a1bcf6e8da0d98e0be3d67
 
 ```{r echo=FALSE}
 ```
@@ -26,7 +65,6 @@ To obtain credible data,  we collected our data sources are from Seattle.gov. Th
 ```{r echo = FALSE}
 pie_chart
 ```
-
 
 This data comes from Seattle Police Department's Communications Center's record of log calls, including 911 calls, etc.The pie chart shows the top 10 most common Initial Call Type received from 2008 to present day. Of these call types, the most common ones are simple Premise Checks and Traffic Violations. However, there are also more serious crimes such as Burglary and Narcotics. 
 
@@ -45,3 +83,14 @@ precinct is an area whose boundaries are determined by the police for their inve
 bar_chart
 ```
 
+<<<<<<< HEAD
+=======
+```{r echo=FALSE}
+bar_chart
+```
+
+```{r echo=FALSE}
+graph_one
+```
+
+>>>>>>> 60f3662abb569f00f3a1bcf6e8da0d98e0be3d67
