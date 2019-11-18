@@ -20,6 +20,40 @@ str(call_data)
 #call_data <- read.csv(file = "data/Call_Data.csv", stringsAsFactors = FALSE)
 #crime_data <- read.csv("./data/crime_data.csv")
 
+######################### Scatter Plot #######################
+
+call_data$abb_sector <- substr(call_data$sector, 1, 1)
+crime_data$abb_sector <- crime_data$sector
+
+call_by_sector <- call_data %>%
+  group_by (abb_sector, sector) %>%
+  summarize(cnt_call = n()) %>%
+  filter(sector != "NULL")
+
+crime_by_sector <- crime_data %>%
+  group_by (abb_sector) %>%
+  summarize(cnt_crime = n())
+
+combined <- left_join(call_by_sector, crime_by_sector, by = "abb_sector") %>%
+  select (sector, abb_sector, cnt_crime, cnt_call) %>%
+  mutate(call_to_crime_ratio = cnt_crime / cnt_call)
+
+scatter_plot <- ggplot(data = combined,
+                     aes(x = sector, y = call_to_crime_ratio, 
+                         color = cnt_call,
+                         size = cnt_crime)) +
+  geom_point() + 
+  theme(axis.text.x = element_text(angle = 70)) +
+  aes(x = reorder(sector, cnt_crime)) +
+  labs(x="Sector", 
+       y="Crimes to Calls Ratio in Record",
+       color = "Number of Calls",
+       size = "Total Crimes in Record")
+
+
+######################## Pie Chart Experimentation ##################
+
+
 call_type <- call_data %>%
   group_by (initial_call_type) %>%
   summarize (
@@ -44,46 +78,7 @@ pie_chart <- ggplot(data = condensed_call_type,
        fill= "Initial Call Types")
 
 
-######################### Scatter Plot #######################
-
-call_data$abb_sector <- substr(call_data$sector, 1, 1)
-crime_data$abb_sector <- crime_data$sector
-
-call_by_sector <- call_data %>%
-  group_by (abb_sector, sector) %>%
-  summarize(cnt_call = n()) %>%
-  filter(sector != "NULL")
-
-crime_by_sector <- crime_data %>%
-  group_by (abb_sector) %>%
-  summarize(cnt_crime = n())
-
-combined <- left_join(call_by_sector, crime_by_sector, by = "abb_sector") %>%
-  select (sector, abb_sector, cnt_crime, cnt_call) %>%
-  mutate(call_to_crime_ratio = cnt_crime / cnt_call)
-
-scatter_plot <- ggplot(data = combined,
-                     aes(x = sector, y = call_to_crime_ratio, 
-                         color = cnt_call,
-                         size = cnt_crime)) +
-  geom_point() + 
-  theme(axis.text.x = element_text(angle = 90)) +
-  aes(x = reorder(sector, cnt_crime)) +
-  labs(x="Sector", 
-       y="Crimes to Calls Ratio in Record",
-       color = "Number of Calls",
-       size = "Total Crimes in Record")
-
-
-######################## Useless stuff delete later ################
-#crime_data$year <- gsub("-.*", "", crime_data$occ_datetime)
-#call_data$year <- substr(call_data$arrived_time, 7, 11)
-#crime_by_year <- crime_data %>%
- # group_by(year) %>%
-  #summarize(cnt = n())
-
-#call_by_year <- call_data %>%
- # group_by(year) %>%
-  #summarize(cnt = n())
-
-
+#This data comes from Seattle Police Department's Communications Center's record of log calls, 
+#including 911 calls, etc.The pie chart shows the top 10 most common Initial Call Type received 
+#from 2008 to present day. Of these call types, the most common ones are simple Premise Checks 
+#and Traffic Violations. However, there are also more serious crimes such as Burglary and Narcotics. 

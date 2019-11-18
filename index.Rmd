@@ -35,6 +35,7 @@ as well as the type of crime, its location, and how frequently that type occurs.
 kable(agg_table, caption = "Crime Information by Sector", 
       col.names = c("Sectors", "Total Primary Offenses", "Most Occured Crime Frequency", "Most Occured Crime", "Number of Call Logs"))
 ```
+### Add description and insights of agg table -Yunwei
 
 ## Crime Report from 2008-present day
 ```{r echo=FALSE}
@@ -45,15 +46,12 @@ A precinct is an area whose boundaries are determined by the police for their in
 As indicated by this graph, the North precinct of Seattle is the most dangerous based on the number of 
 crimes that have occured from 2008 to present day.
 
-## Call Data of SPD Communications Center
-```{r echo = FALSE}
-pie_chart
-```
+## Relations of Crime and Call Data 
+#### (from SPD Communications Center)
 
-This data comes from Seattle Police Department's Communications Center's record of log calls, 
-including 911 calls, etc.The pie chart shows the top 10 most common Initial Call Type received 
-from 2008 to present day. Of these call types, the most common ones are simple Premise Checks 
-and Traffic Violations. However, there are also more serious crimes such as Burglary and Narcotics. 
+``` {r echo = FALSE}
+scatter_plot
+```
 
 
 ## Number of Crime Reports in Seattle Neighborhood
