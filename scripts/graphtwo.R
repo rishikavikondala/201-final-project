@@ -5,11 +5,14 @@ library(httr)
 library(jsonlite)
 
 uri <- "https://data.seattle.gov/resource/33kz-ixgy.json"
-
 response <- GET(uri)
-
 response_text <- content(response, "text")
 call_data <- fromJSON(response_text)
+
+uri3 <- "https://data.seattle.gov/resource/4fs7-3vj5.json"
+response3 <- GET(uri3)
+response_text3 <- content(response3, "text")
+crime_data <- fromJSON(response_text3)
 
 is.data.frame(call_data)
 str(call_data)
@@ -39,3 +42,32 @@ pie_chart <- ggplot(data = condensed_call_type,
   labs(x="Initial Call Types", 
        y="Number of Calls",
        fill= "Initial Call Types")
+
+
+######################### Scatter Plot #######################
+
+call_data$abb_sector <- substr(call_data$sector, 1, 1)
+crime_data$abb_sector <- crime_data$sector
+
+call_by_sector <- call_data %>%
+  group_by (abb_sector, sector) %>%
+  summarize(cnt_call = n())
+
+crime_by_sector <- crime_data %>%
+  group_by (abb_sector) %>%
+  summarize(cnt_crime = n())
+
+combined <- left_join(crime_by_sector, call_by_sector, by = "abb_sector")
+######################## Useless stuff delete later ################
+crime_data$year <- gsub("-.*", "", crime_data$occ_datetime)
+call_data$year <- substr(call_data$arrived_time, 7, 11)
+
+crime_by_year <- crime_data %>%
+  group_by(year) %>%
+  summarize(cnt = n())
+
+call_by_year <- call_data %>%
+  group_by(year) %>%
+  summarize(cnt = n())
+
+
