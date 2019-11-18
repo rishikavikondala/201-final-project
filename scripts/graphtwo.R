@@ -57,7 +57,22 @@ crime_by_sector <- crime_data %>%
   group_by (abb_sector) %>%
   summarize(cnt_crime = n())
 
-combined <- left_join(crime_by_sector, call_by_sector, by = "abb_sector")
+combined <- left_join(call_by_sector, crime_by_sector, by = "abb_sector") %>%
+  select (sector, abb_sector, cnt_crime, cnt_call)
+
+scatter_plot <- ggplot(data = combined,
+                     aes(x = sector, y = cnt_call, 
+                         size = cnt_crime,
+                         color = sector)) +
+  geom_point() + 
+  theme(axis.text.x = element_text(angle = 90)) +
+  aes(x = reorder(sector, cnt_crime))
+  labs(x="Sector", 
+       y="Number of Calls",
+       color = "Sector",
+       size = "Total Crimes Reported")
+
+
 ######################## Useless stuff delete later ################
 crime_data$year <- gsub("-.*", "", crime_data$occ_datetime)
 call_data$year <- substr(call_data$arrived_time, 7, 11)
