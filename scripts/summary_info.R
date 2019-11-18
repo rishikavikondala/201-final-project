@@ -54,7 +54,7 @@ agg_table <- left_join(one_by_loc, two_by_loc, by = "abb_sector") %>%
   left_join(three_by_loc, by = "abb_sector") %>%
   select(sector, 
          num_primary_offenses, 
-         highest_freq_crime,  
          highest_freq,
+         highest_freq_crime,  
          num_calls)
 
