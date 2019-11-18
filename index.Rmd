@@ -36,6 +36,15 @@ kable(agg_table, caption = "Crime Information by Sector",
       col.names = c("Sectors", "Total Primary Offenses", "Most Occured Crime Frequency", "Most Occured Crime", "Number of Call Logs"))
 ```
 
+## Crime Report from 2008-present day
+```{r echo=FALSE}
+graph_one
+```
+
+A precinct is an area whose boundaries are determined by the police for their investigative purposes. 
+As indicated by this graph, the North precinct of Seattle is the most dangerous based on the number of 
+crimes that have occured from 2008 to present day.
+
 ## Call Data of SPD Communications Center
 ```{r echo = FALSE}
 pie_chart
@@ -45,15 +54,6 @@ This data comes from Seattle Police Department's Communications Center's record 
 including 911 calls, etc.The pie chart shows the top 10 most common Initial Call Type received 
 from 2008 to present day. Of these call types, the most common ones are simple Premise Checks 
 and Traffic Violations. However, there are also more serious crimes such as Burglary and Narcotics. 
- 
-
-## Crime Report from 2008-present day
-```{r echo=FALSE}
-graph_one
-```
-A precinct is an area whose boundaries are determined by the police for their investigative purposes. 
-As indicated by this graph, the North precinct of Seattle is the most dangerous based on the number of 
-crimes that have occured from 2008 to present day.
 
 
 ## Number of Crime Reports in Seattle Neighborhood
@@ -61,7 +61,7 @@ crimes that have occured from 2008 to present day.
 bar_chart
 ```
 
-This data comesfrom 
+This data comes from 
 The Seattle Police Department provided this data on the Seattle.gov website. 
 It includes information about the crime that was reported in different neighborhoods in Seattle. 
 There are total 524k rows, and 11 columns and each row is a unique crime reported record. 

@@ -18,13 +18,5 @@ precinct_totals <- crime_data %>%
 graph_one <- ggplot(
   data = precinct_totals, aes(x = Precinct, y = n, fill = Precinct)) +
   geom_bar(stat = "identity") + 
-  guides(fill = FALSE) + 
-  xlab("Precinct of Seattle") + 
-  ylab("Total Number of Crimes") +
+  coord_polar() + 
   ggtitle("Crimes Per Precinct from 2008 to Present Day")
-
-# Convert to an interactive plotly graph
-graph_one <- ggplotly(graph_one) %>% 
-  config(displayModeBar = F) %>% 
-  layout(showlegend = FALSE)
-
