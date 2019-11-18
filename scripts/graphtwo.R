@@ -51,38 +51,39 @@ crime_data$abb_sector <- crime_data$sector
 
 call_by_sector <- call_data %>%
   group_by (abb_sector, sector) %>%
-  summarize(cnt_call = n())
+  summarize(cnt_call = n()) %>%
+  filter(sector != "NULL")
 
 crime_by_sector <- crime_data %>%
   group_by (abb_sector) %>%
   summarize(cnt_crime = n())
 
 combined <- left_join(call_by_sector, crime_by_sector, by = "abb_sector") %>%
-  select (sector, abb_sector, cnt_crime, cnt_call)
+  select (sector, abb_sector, cnt_crime, cnt_call) %>%
+  mutate(call_to_crime_ratio = cnt_crime / cnt_call)
 
 scatter_plot <- ggplot(data = combined,
-                     aes(x = sector, y = cnt_call, 
-                         size = cnt_crime,
-                         color = sector)) +
+                     aes(x = sector, y = call_to_crime_ratio, 
+                         color = cnt_call,
+                         size = cnt_crime)) +
   geom_point() + 
   theme(axis.text.x = element_text(angle = 90)) +
-  aes(x = reorder(sector, cnt_crime))
+  aes(x = reorder(sector, cnt_crime)) +
   labs(x="Sector", 
-       y="Number of Calls",
-       color = "Sector",
-       size = "Total Crimes Reported")
+       y="Crimes to Calls Ratio in Record",
+       color = "Number of Calls",
+       size = "Total Crimes in Record")
 
 
 ######################## Useless stuff delete later ################
-crime_data$year <- gsub("-.*", "", crime_data$occ_datetime)
-call_data$year <- substr(call_data$arrived_time, 7, 11)
+#crime_data$year <- gsub("-.*", "", crime_data$occ_datetime)
+#call_data$year <- substr(call_data$arrived_time, 7, 11)
+#crime_by_year <- crime_data %>%
+ # group_by(year) %>%
+  #summarize(cnt = n())
 
-crime_by_year <- crime_data %>%
-  group_by(year) %>%
-  summarize(cnt = n())
-
-call_by_year <- call_data %>%
-  group_by(year) %>%
-  summarize(cnt = n())
+#call_by_year <- call_data %>%
+ # group_by(year) %>%
+  #summarize(cnt = n())
 
 
