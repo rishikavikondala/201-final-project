@@ -27,9 +27,9 @@ one_by_loc <- data1 %>%
 data2$abb_sector <- substr(data2$sector, 1, 1)
 
 two_by_loc <- data2 %>%
-  group_by(abb_sector) %>%
+  group_by(abb_sector,sector) %>%
   summarize(num_calls = n()) %>%
-  select(abb_sector, num_calls)
+  select(sector, abb_sector, num_calls)
 
 data3$abb_sector <- substr(data3$sector, 1, 1)
 
@@ -38,4 +38,7 @@ three_by_loc <- data3 %>%
   summarize(num_crime_reported = n()) %>%
   select(abb_sector, num_crime_reported)
   
-agg_table <- left_join(one_by_loc, two_by_loc, by = "abb_sector")
+agg_table <- left_join(one_by_loc, two_by_loc, by = "abb_sector") %>%
+  left_join(three_by_loc, by = "abb_sector") %>%
+  select(sector, num_crimes, num_crime_reported, num_calls)
+
