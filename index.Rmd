@@ -60,10 +60,13 @@ There are total 524k rows, and 11 columns and each row is a unique crime reporte
 The x-axis label of the graph represent the name of the location that crimes were reported and y axis 
 label represent the number of crimes that were reported at each location.
 The visualization focused on the number of crime reports in different neighborhoods in Seattle. 
-The visualization is represented as a bar graph, because the Bar graphs are useful when there are a high number of input groups such as the long list of neighborhood. The bar graph allows viewers to compare 
+The visualization is represented as a bar graph, because the Bar graphs are useful when there are a
+high number of input groups such as the long list of neighborhood. The bar graph allows viewers to compare 
 the number of reported crimes (y-axis) easily. 
-The graph displays that Downtown Seattle has the highest rate of crime reported, Northgate and Capitol Hill has the higest rate following. 
-The city with the lowest crime rate is Commercial Harbor Island. The numbers of crimes are proportionally distributed across the areas. 
+The graph displays that Downtown Seattle has the highest rate of crime reported, Northgate and Capitol Hill 
+has the higest rate following. 
+The city with the lowest crime rate is Commercial Harbor Island. The numbers of crimes are proportionally 
+distributed across the areas. 
 
 ## Number of Crime Reports in Seattle Neighborhood
 ```{r echo=FALSE}
