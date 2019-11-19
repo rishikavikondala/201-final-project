@@ -1,6 +1,7 @@
 library(httr)
 library(jsonlite)
 library(dplyr)
+library(lintr)
 
 uri1 <- "https://data.seattle.gov/resource/3xqu-vnum.json"
 response1 <- GET(uri1)
@@ -31,14 +32,10 @@ one_by_loc <- data1 %>%
   ) %>%
   select(abb_sector, highest_freq, highest_freq_crime)
 
-#one_by_loc <- data1 %>%
- # group_by(abb_sector) %>%
-  #summarize(num_crimes = n())
-
 data2$abb_sector <- substr(data2$sector, 1, 1)
 
 two_by_loc <- data2 %>%
-  group_by(abb_sector,sector) %>%
+  group_by(abb_sector, sector) %>%
   summarize(num_calls = n()) %>%
   select(sector, abb_sector, num_calls)
 
@@ -53,10 +50,10 @@ three_by_loc <- data3 %>%
 agg_table <- left_join(one_by_loc, two_by_loc, by = "abb_sector") %>%
   left_join(three_by_loc, by = "abb_sector") %>%
   filter(sector != "NULL") %>%
-  select(sector, 
-         num_primary_offenses, 
+  select(sector,
+         num_primary_offenses,
          highest_freq,
-         highest_freq_crime,  
+         highest_freq_crime,
          num_calls) %>%
   arrange(desc(num_primary_offenses))
 
