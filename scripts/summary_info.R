@@ -52,6 +52,7 @@ three_by_loc <- data3 %>%
   
 agg_table <- left_join(one_by_loc, two_by_loc, by = "abb_sector") %>%
   left_join(three_by_loc, by = "abb_sector") %>%
+  filter(sector != "NULL") %>%
   select(sector, 
          num_primary_offenses, 
          highest_freq,
