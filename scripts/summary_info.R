@@ -60,3 +60,10 @@ agg_table <- left_join(one_by_loc, two_by_loc, by = "abb_sector") %>%
          num_calls) %>%
   arrange(desc(num_primary_offenses))
 
+agg_table_max <- max(agg_table$num_primary_offenses)
+agg_table_min <- min(agg_table$num_primary_offenses)
+agg_table_mean <- round(mean(agg_table$num_primary_offenses))
+calls_max <- max(agg_table$num_calls)
+calls_min <- min(agg_table$num_calls)
+calls_mean <- round(mean(agg_table$num_calls))
+most_common_type <- tail(names(sort(table(agg_table$highest_freq_crime))), 1)
