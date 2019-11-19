@@ -52,10 +52,7 @@ The maximum number of primary offenses that occured in an area is `r agg_table_m
 graph_one
 ```
 
-A precinct is an area whose boundaries are determined by the police for their investigative purposes. 
-As indicated by this graph, the North precinct of Seattle is the most dangerous based on the number of 
-crimes that have occured from 2008 to present day.
-
+A precinct is an area whose boundaries are determined by the police for their investigative purposes. As indicated by this graph, the North precinct of Seattle is the most dangerous based on the number of crimes that have occured from 2008 to present day. A pie chart was chosen to display this information because it would be easy to visualize, out of the total number of crimes from 2008 to present day, how many occur in each precinct of Seattle compared to the others. Using the visual cue of size, it becomes easier to see any drastic differences in crime frequencies in the various police precincts of Seattle. A pie chart was also chosen to show how the total occurences in crime was split up, so it would be easier to find out if there was one area where crimes predominantly occured, or if the distribution is more even.
 
 
 The second plot comes from the two dataset, Call Data joined with Crime Data, from Seattle Police Department as well.
@@ -95,6 +92,3 @@ distributed across the areas.
 ```{r echo=FALSE}
 bar_chart
 ```
-
-
-
