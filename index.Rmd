@@ -75,8 +75,9 @@ On the other hand, Ocean sector has both low number of calls and low number of c
 scatter_plot
 ```
 
-This data comes from 
-The Seattle Police Department provided this data on the Seattle.gov website. 
+
+
+The Seattle Police Department provided this next data (Crime Data) on the Seattle.gov website. 
 It includes information about the crime that was reported in different neighborhoods in Seattle. 
 There are total 524k rows, and 11 columns and each row is a unique crime reported record. 
 The x-axis label of the graph represent the name of the location that crimes were reported and y axis 
