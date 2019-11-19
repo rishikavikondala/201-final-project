@@ -1,5 +1,7 @@
 # Project Brainstorm
 
+Link to deployed GitHub web app: https://info201b-au19.github.io/final-rishikavikondala/
+
 ### **Domain of interest: Crime**
 
 _Why are you interested in this field/domain?_
