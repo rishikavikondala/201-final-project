@@ -26,7 +26,7 @@ from this data to try implementing and enforcing different solutions to reduce c
 We believe that this type of data-driven decision making can have a positive impact 
 on cities all around the world.
 
-To obtain credible data,  we collected our data sources are from Seattle.gov. 
+To obtain credible data, we collected our data sources are from Seattle.gov. 
 The Seattle Police Department created all three data that we used for the project. 
 Dataset 1 provides information about criminal incidents from 2008-present day, 
 as well as the type of crime, its location, and how frequently that type occurs.
@@ -53,15 +53,13 @@ crimes that have occured from 2008 to present day.
 scatter_plot
 ```
 
-
-## Number of Crime Reports in Seattle Neighborhood
-```{r echo=FALSE}
-bar_chart
-```
-
 This data comes from 
 The Seattle Police Department provided this data on the Seattle.gov website. 
 It includes information about the crime that was reported in different neighborhoods in Seattle. 
 There are total 524k rows, and 11 columns and each row is a unique crime reported record. 
 The visualization focused on the number of crime reports in different neighborhoods in Seattle
+## Number of Crime Reports in Seattle Neighborhood
+```{r echo=FALSE}
+bar_chart
+```
 

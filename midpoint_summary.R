@@ -11,11 +11,13 @@ one_by_loc <- chart_1 %>%
 
 two_by_loc <- chart_2 %>%
   group_by(Sector) %>%
-  summarize(amount = n())
+  summarize(amount = n()) %>%
+  filter(amount == max(amount))
 
 three_by_loc <- chart_3 %>%
   group_by(Sector) %>%
-  summarize(amount = n())
+  summarize(amount = n()) %>% 
+  filter(amount == max(amount))
 
 ## by crimes 
 one_by_type <- chart_1 %>%
