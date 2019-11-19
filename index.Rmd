@@ -35,7 +35,14 @@ as well as the type of crime, its location, and how frequently that type occurs.
 kable(agg_table, caption = "Crime Information by Sector", 
       col.names = c("Sectors", "Total Primary Offenses", "Most Occured Crime Frequency", "Most Occured Crime", "Number of Call Logs"))
 ```
-### Add description and insights of agg table -Yunwei
+
+The aggregate data is collected from all three datasets:
+
+- Data 1: [Seattle Crime Stats](https://data.seattle.gov/Public-Safety/Seattle-Crime-Stats-by-Police-Precinct-2008-Presen/3xqu-vnum)
+- Data 2: [Call Data](https://data.seattle.gov/Public-Safety/Call-Data/33kz-ixgy)
+- Data 3: [Crime Data](https://data.seattle.gov/Public-Safety/Crime-Data/4fs7-3vj5)
+
+We chose these values - total primary offenses, most occured crime frequency, most occured crime, and number of call logs - as the columns to get an overview of the crime rate, reported rate (i.e. number of 911 calls), and type of most commonly reported crime prevelant in Seattle depending on the region (rows). We sorted the data by number of offenses descdending to see which sector is potentially the most dangerous/with the highest crime rate. The table clearly shows that the most revelant reported crime in the 17 sectors is Assault. Of all the sectors, the King sector has the most total primary offenses crime reported and call data entries in the SPD's call logs. 
 
 ## Crime Report from 2008-present day
 ```{r echo=FALSE}
@@ -45,6 +52,18 @@ graph_one
 A precinct is an area whose boundaries are determined by the police for their investigative purposes. 
 As indicated by this graph, the North precinct of Seattle is the most dangerous based on the number of 
 crimes that have occured from 2008 to present day.
+
+
+
+The second plot comes from the two dataset, Call Data joined with Crime Data, from Seattle Police Department as well.
+The Call Data records the Call Logs in the Communication Center.
+We chose this data to analyze whether the number of calls and number of crimes in each sector have a high correlation.
+The x-axis presents the individual sectors. The y-axis shows the ratio of crimes to calls recorded in the SPD's database,
+calculated by dividing number of crimes in each sector divided by number of calls in each sector. 
+From the color and size, it can be seen that a high crime rate generally leads to a high call rate. 
+This suggests that a majority of the crimes get reported to 911 and other police communication in most sectors. 
+An outlier shows that Queen has a relatively higher number of crime than calls logged in the database.
+On the other hand, Ocean sector has both low number of calls and low number of crimes in record.  
 
 ## Relations of Crime and Call Data 
 #### (from SPD Communications Center)
