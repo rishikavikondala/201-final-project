@@ -17,7 +17,7 @@ two_by_loc <- chart_2 %>%
 three_by_loc <- chart_3 %>%
   group_by(Sector) %>%
   summarize(amount = n()) %>% 
-  filter(amount == max(amount))
+  filter(amount == max)
 
 ## by crimes 
 one_by_type <- chart_1 %>%
@@ -26,7 +26,9 @@ one_by_type <- chart_1 %>%
   filter(amount == max(amount))
 
 two_by_type <- chart_2 %>%
-  mutate(type = gsub(" .*$", "", gsub("-", "", Final.Call.Type))) %>%
+  mutate(
+    type = gsub(" .*$", "", gsub("-", "", Final.Call.Type))
+    ) %>%
   group_by(type) %>%
   summarize(amount = n()) %>%
   filter(amount == max(amount))

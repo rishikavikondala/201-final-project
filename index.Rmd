@@ -34,6 +34,7 @@ as well as the type of crime, its location, and how frequently that type occurs.
 ```{r echo = FALSE}
 kable(agg_table, caption = "Crime Information by Sector", 
       col.names = c("Sectors", "Total Primary Offenses", "Most Occured Crime Frequency", "Most Occured Crime", "Number of Call Logs"))
+           
 ```
 
 The aggregate data is collected from all three datasets:
@@ -42,7 +43,9 @@ The aggregate data is collected from all three datasets:
 - Data 2: [Call Data](https://data.seattle.gov/Public-Safety/Call-Data/33kz-ixgy)
 - Data 3: [Crime Data](https://data.seattle.gov/Public-Safety/Crime-Data/4fs7-3vj5)
 
-We chose these values - total primary offenses, most occured crime frequency, most occured crime, and number of call logs - as the columns to get an overview of the crime rate, reported rate (i.e. number of 911 calls), and type of most commonly reported crime prevelant in Seattle depending on the region (rows). We sorted the data by number of offenses descdending to see which sector is potentially the most dangerous/with the highest crime rate. The table clearly shows that the most revelant reported crime in the 17 sectors is Assault. Of all the sectors, the King sector has the most total primary offenses crime reported and call data entries in the SPD's call logs. 
+We chose these values - total primary offenses, most occured crime frequency, most occured crime, and number of call logs - as the columns to get an overview of the crime rate, reported rate (i.e. number of 911 calls), and type of most commonly reported crime prevelant in Seattle depending on the region (rows). We sorted the data by number of offenses descdending to see which sector is potentially the most dangerous/with the highest crime rate. 
+
+The maximum number of primary offenses that occured in an area is `r agg_table_max`. This was in King County. The minimum number of primary offenses that occured was in the OCEAN sector, which had `r agg_table_min` incidents. The maximum number of calls that occured in an area is `r calls_max`, while the minimum is `r calls_min`. This happened in King County. Because King County has the most crimes and the most 911 calls, it is clear that people are responsive to criminal activity in the area. These high numbers may be due to the fact that King County has multiple metropolitan cities of high population, such as Bellevue and Seattle. The most common type of crime is `r most_common_type`.
 
 ## Crime Report from 2008-present day
 ```{r echo=FALSE}
