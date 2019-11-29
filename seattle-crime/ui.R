@@ -1,25 +1,43 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
 
-first_page <- tabPanel(
-    "Introduction Page",
+ui <- fluidPage(
+    
+    titlePanel("Analysis of the City of Seattle's Police Reports"),
+    
     sidebarLayout(
+        
         sidebarPanel(
+            h6("Question 1: Where do violent crimes take place most often 
+               in the city of Seattle?"),
+            h6("Question 2: Which category of crime is most prevalent 
+               in the city of Seattle?"),
+            h6("Question 3: Is there an alignment between the frequency of crimes 
+               and 911 calls in the different areas of Seattle?"),
+            
+            radioButtons("dist", "Distribution type:",
+                         c("Normal" = "norm",
+                           "Uniform" = "unif",
+                           "Log-normal" = "lnorm",
+                           "Exponential" = "exp")),
+            br(),
+            sliderInput("n",
+                        "Number of observations:",
+                        value = 500,
+                        min = 1,
+                        max = 1000)
+            
+        ),
+        
+        mainPanel(
+            
+            tabsetPanel(type = "tabs",
+                        tabPanel("Project Overview", verbatimTextOutput("plot")),
+                        tabPanel("Question 1", plotOutput("plot")),
+                        tabPanel("Question 2", plotOutput("plot")),
+                        tabPanel("Question 3", plotOutput("plot")),
+                        tabPanel("Summary Takeaways", plotOutput("plot"))
+            )
             
         )
     )
-    
-)
-
-ui <- navbarPage(
-    "final deliverable",
-    first_page
 )
