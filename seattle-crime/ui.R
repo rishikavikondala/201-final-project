@@ -31,13 +31,12 @@ ui <- fluidPage(
         mainPanel(
             
             tabsetPanel(type = "tabs",
-                        tabPanel("Project Overview", verbatimTextOutput("plot")),
-                        tabPanel("Question 1", plotOutput("plot")),
-                        tabPanel("Question 2", plotOutput("plot")),
-                        tabPanel("Question 3", plotOutput("plot")),
-                        tabPanel("Summary Takeaways", plotOutput("plot"))
+                        tabPanel("Project Overview", verbatimTextOutput("overview")),
+                        tabPanel("Question 1", plotOutput("plot1")),
+                        tabPanel("Question 2", plotOutput("plot2")),
+                        tabPanel("Question 3", plotOutput("plot3")),
+                        tabPanel("Summary Takeaways", plotOutput("summary"))
             )
-            
         )
     )
 )
