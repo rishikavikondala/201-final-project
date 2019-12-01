@@ -3,8 +3,20 @@ precinct_totals <- crime_data %>%
     group_by(Precinct) %>%
     count()
 
+# Find the number of crimes in each precinct each year
+
+# in08 <- crime_data %>% filter(year == "2008") %>% group_by(Precinct) %>% count()
+# in09 <- crime_data %>% filter(year == "2009") %>% group_by(Precinct) %>% count()
+# in10 <- crime_data %>% filter(year == "2010") %>% group_by(Precinct) %>% count()
+# in11 <- crime_data %>% filter(year == "2011") %>% group_by(Precinct) %>% count()
+# in12 <- crime_data %>% filter(year == "2012") %>% group_by(Precinct) %>% count()
+# in13 <- crime_data %>% filter(year == "2013") %>% group_by(Precinct) %>% count()
+# in14 <- crime_data %>% filter(year == "2014") %>% group_by(Precinct) %>% count()
+# 
+# annual_totals <- as.data.frame(in08, in09, in10, in11, in12, in13, in14)
+
 graph_one <- plot_ly(precinct_totals, labels = ~Precinct, values = ~n, type = 'pie') %>%
-    layout(title = 'Crimes Per Precinct from 2008 to Present Day',
+    layout(title = 'Crimes Per Precinct from 2008 to 2014',
            xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
            yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
 
