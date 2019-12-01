@@ -1,9 +1,15 @@
+# Find number of crimes per precinct from 2008-Present
+precinct_totals <- crime_data %>%
+    group_by(Precinct) %>%
+    count()
+
+graph_one <- plot_ly(precinct_totals, labels = ~Precinct, values = ~n, type = 'pie') %>%
+    layout(title = 'Crimes Per Precinct from 2008 to Present Day',
+           xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+           yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
 server <- function(input, output) {
 
-    output$crime <- renderImage({
-        #img(src = "seattlecrime.png", height = 200, width = 350)
-    })
-    
     output$overview <- renderUI({
         header_one <- strong("Question 1:")
         content_one <- "Our first inquiry of interest are the most common areas in 
@@ -25,19 +31,33 @@ server <- function(input, output) {
         departments often receive false alarms, unneccsary reports, and unrealistic claims
         that ultimately, waste everyone's time. Faulty or petty 911 calls could distract
         officers from very important tasks and even break a lead on actual crime. Patterns 
-        found in the displayed data could reveal ... (?)"
+        found in the displayed data could reveal if there is enough action being taken against
+        crime (through 911 calls) in the areas where there is more criminal activity occuring."
         header_four <- h4(em(strong("Explored Datasets: ")))
         content_four <- "We utilized three different datasets released by the Seattle Police
         Department: one regarding records of criminal activity, another entailing information
-        on calls to 911, and a dataset showcasing reported or detected crimes. blah blah"
+        on calls to 911, and a dataset showcasing reported or detected crimes."
         HTML(paste("<br/>", header_one, content_one, "<br/><br/>", 
                    header_two, content_two, "<br/><br/>",
                    header_three, content_three, "<br/><br/>",
                    header_four, content_four))
     })
     
-    output$plot1 <- renderPlot({
+    # Each page should revolve around a specific question you have of 
+    # your dataset. Each page should have sufficient interactivity 
+    # (e.g., Shiny widgets + 1 or more reactive charts) for exploring
+    # the question of interest.
+    
+    output$plot1 <- renderPlotly({
         graph_one
+    })
+    
+    output$ans_one <- renderUI({
+        header_one <- strong("Answer to question 1:")
+        content_one <- "Based on this pie chart, it can be concluded that
+        the Northern precinct of Seattle experienced the most criminal activity
+        from 2008 to present day."
+        HTML(paste("<br/>", header_one, content_one, "<br/><br/>")) 
     })
     
     output$plot2 <- renderPlot({
