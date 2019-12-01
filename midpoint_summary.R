@@ -49,7 +49,3 @@ crimes_by_month <- chart_3 %>%
   mutate(month = substr(Occurred.Date, 1, 2)) %>%
   group_by(month) %>%
   summarize(amount = n()) 
-
-
-
-

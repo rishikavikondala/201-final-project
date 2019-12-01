@@ -23,3 +23,24 @@ graph_one <- ggplot(
   geom_bar(stat = "identity") +
   coord_polar() +
   ggtitle("Crimes Per Precinct from 2008 to Present Day")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
