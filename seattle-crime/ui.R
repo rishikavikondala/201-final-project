@@ -5,6 +5,18 @@ ui <- fluidPage(
         tabPanel("Project Overview",
             div(strong(h3("Crime in Seattle")), style = "text-align: center;"),
             div(img(src='seattlecrime.png', height = 250, width = 500), style = "text-align: center;"),
+            h4("Explored Datasets:"),
+            p("We utilized three different datasets released onto Seattle.gov by the Seattle Police
+            Department: one regarding records of criminal activity, another entailing information
+            on calls to 911, and a dataset showcasing reported—via calling—or detected crimes. Within
+            our explored data, there is information on details such as the location of incidents,
+            Police Sectors that got involved, what type of crime was called in, along with many 
+            other records that may provide insight on a particular event/report. Evaluating all
+            three datasets side by side reveal patterns of where certain crimes will be 
+            most prevalant; such patterns will then become a lot easier for the Police to detect 
+            and track, ensuring optimal civilian safety. Furthermore, anyone with access to this
+            project, will have visual aids to inform them of the more dangerous locations to be
+            avoided."),
             h5("Question 1: ", strong(em("Where do violent crimes take place most often in the city of 
             Seattle?"))),
             p("Our first inquiry of interest are the most common areas in 
@@ -29,19 +41,7 @@ ui <- fluidPage(
             that ultimately, waste everyone's time. Faulty or petty 911 calls could distract
             officers from very important tasks and even break a lead on actual crime. Patterns 
             found in the displayed data could reveal if there is enough action being taken against
-            crime (through 911 calls) in the areas where there is more criminal activity occuring."),
-            h4("Explored Datasets:"),
-            p("We utilized three different datasets released onto Seattle.gov by the Seattle Police
-            Department: one regarding records of criminal activity, another entailing information
-            on calls to 911, and a dataset showcasing reported—via calling—or detected crimes. Within
-            our explored data, there is information on details such as the location of incidents,
-            Police Sectors that got involved, what type of crime was called in, along with many 
-            other records that may provide insight on a particular event/report. Evaluating all
-            three datasets side by side reveal patterns of where certain crimes will be 
-            most prevalant; such patterns will then become a lot easier for the Police to detect 
-            and track, ensuring optimal civilian safety. Furthermore, anyone with access to this
-            project, will have visual aids to inform them of the more dangerous locations to be
-            avoided.")
+            crime (through 911 calls) in the areas where there is more criminal activity occuring.")
         ),
         tabPanel("Question 1",
             # sidebarLayout(
