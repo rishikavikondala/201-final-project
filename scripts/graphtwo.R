@@ -34,11 +34,22 @@ combined <- left_join(call_by_sector, crime_by_sector, by = "abb_sector") %>%
   select(sector, abb_sector, cnt_crime, cnt_call) %>%
   mutate(call_to_crime_ratio = cnt_crime / cnt_call)
 
-filter_num_crime_detail <- function(range){
-  lower_bound <- range[1]
-  upper_bound <- range[2]
-  filter_combined <- combined %>% 
-    filter(cnt_crime > lower_bound & cnt_crime < upper_bound)
+filter_num_crime_detail <- function(crim_range, call_range, attribute = c(TRUE, TRUE)){
+  crim_lower_bound <- crim_range[1]
+  crim_upper_bound <- crim_range[2]
+  call_lower_bound <- call_range[1]
+  call_upper_bound <- call_range[2]
+  
+  filter_combined <- combined
+  
+  if (fil_crime) {
+    filter_combined <- filter_combined %>% 
+      filter(cnt_crime > crim_lower_bound & cnt_crime < crim_upper_bound)
+  }
+  if (fil_call) {
+    filter_combined <- filter_combined %>% 
+      filter(cnt_call > call_lower_bound & cnt_call < call_upper_bound)
+  }
   
   scatter_plot <- ggplot(data = filter_combined,
                          aes(x = sector, y = call_to_crime_ratio,
