@@ -2,7 +2,7 @@ library(shiny)
 
 ui <- fluidPage(
     navbarPage("Analysis of the City of Seattle's Police Reports",
-        tabPanel("Project Overview",
+        tabPanel("Project Overview", 
             div(strong(h3("Crime in Seattle")), style = "text-align: center;"),
             div(img(src='seattlecrime.png', height = 250, width = 500), style = "text-align: center;"),
             h4("Explored Datasets:"),
