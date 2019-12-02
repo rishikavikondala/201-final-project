@@ -16,8 +16,8 @@ graph_one_alt <- ggplot(
 
 server <- function(input, output) {
     
-    output$plot1 <- renderPlotly({
-        graph_one
+    output$plot1 <- renderPlot({
+        "plot1" <- graph_one_alt
     })
     
     output$ans_one <- renderUI({

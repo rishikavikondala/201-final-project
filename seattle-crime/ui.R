@@ -44,7 +44,7 @@ ui <- fluidPage(
             crime (through 911 calls) in the areas where there is more criminal activity occuring.")
         ),
         tabPanel("Question 1",
-            plotlyOutput("plot1")
+            plotOutput("plot1")
         ),
         tabPanel("Question 2",
             sidebarLayout(
