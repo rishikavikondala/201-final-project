@@ -3,9 +3,13 @@ library(shiny)
 q2 <- tabPanel("Question 2",
                sidebarLayout(
                    sidebarPanel(
-                       sliderInput(inputId = "sli_range",
-                                   label = h3("Number of Crimes"),
-                                   min = 0, max = 90, value = c(30, 80))
+                       sliderInput(inputId = "crim_range",
+                                   label = h3("Total Crimes in Record"),
+                                   min = 0, max = 90, value = c(30, 80)),
+                       
+                       sliderInput(inputId = "call_range",
+                                   label = h3("Number of Calls"),
+                                   min = 0, max = 100, value = c(0, 100))
                    ),
                    mainPanel(
                        plotOutput("plot2")

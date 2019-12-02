@@ -32,8 +32,7 @@ server <- function(input, output) {
     })
     
     output$plot2 <- renderPlot({
-        scatter_pl <- filter_num_crime_detail(input$sli_range)
-        print(scatter_pl)
+        scatter_pl <- filter_num_crime_detail(input$crim_range, input$call_range)
         scatter_pl
     })
     
