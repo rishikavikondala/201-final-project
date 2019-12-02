@@ -34,14 +34,24 @@ combined <- left_join(call_by_sector, crime_by_sector, by = "abb_sector") %>%
   select(sector, abb_sector, cnt_crime, cnt_call) %>%
   mutate(call_to_crime_ratio = cnt_crime / cnt_call)
 
-scatter_plot <- ggplot(data = combined,
-                     aes(x = sector, y = call_to_crime_ratio,
-                         color = cnt_call,
-                         size = cnt_crime)) +
-  geom_point() +
-  theme(axis.text.x = element_text(angle = 70)) +
-  aes(x = reorder(sector, cnt_crime)) +
-  labs(x = "Sector",
-       y = "Crimes to Calls Ratio in Record",
-       color = "Number of Calls",
-       size = "Total Crimes in Record")
+filter_num_crime_detail <- function(range){
+  lower_bound <- range[1]
+  upper_bound <- range[2]
+  filter_combined <- combined %>% 
+    filter(cnt_crime > lower_bound & cnt_crime < upper_bound)
+  
+  scatter_plot <- ggplot(data = filter_combined,
+                         aes(x = sector, y = call_to_crime_ratio,
+                             color = cnt_call,
+                             size = cnt_crime)) +
+    geom_point() +
+    theme(axis.text.x = element_text(angle = 70)) +
+    aes(x = reorder(sector, cnt_crime)) +
+    labs(x = "Sector",
+         y = "Crimes to Calls Ratio in Record",
+         color = "Number of Calls",
+         size = "Total Crimes in Record")
+  
+  scatter_plot
+}
+

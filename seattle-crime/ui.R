@@ -1,5 +1,17 @@
 library(shiny)
 
+q2 <- tabPanel("Question 2",
+               sidebarLayout(
+                   sidebarPanel(
+                       sliderInput(inputId = "sli_range",
+                                   label = h3("Number of Crimes"),
+                                   min = 0, max = 90, value = c(30, 80))
+                   ),
+                   mainPanel(
+                       plotOutput("plot2")
+                   )
+               ))
+
 ui <- fluidPage(
     navbarPage("Analysis of the City of Seattle's Police Reports",
         tabPanel("Project Overview", 
@@ -46,23 +58,14 @@ ui <- fluidPage(
         tabPanel("Question 1",
             plotOutput("plot1")
         ),
-        tabPanel("Question 2",
-            sidebarLayout(
-                sidebarPanel(
-
-                ),
-                mainPanel(
-                    plotlyOutput("plot2")
-                )
-            )
-        ),
+        q2,
         tabPanel("Question 3",
             sidebarLayout(
                 sidebarPanel(
                                   
                 ),
                 mainPanel(
-                    plotlyOutput("plot3")
+                    plotOutput("plot3")
                 )
             )
         ),
@@ -72,7 +75,7 @@ ui <- fluidPage(
                                   
                 ),
                 mainPanel(
-                    plotlyOutput("plot2")
+                    #plotOutput("plot2")
                 )
         )
         )
