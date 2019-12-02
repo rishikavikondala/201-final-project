@@ -17,12 +17,7 @@ graph_one_alt <- ggplot(
 server <- function(input, output) {
     
     output$plot1 <- renderPlotly({
-        #if (input$type_one == "Standard") {
-            graph_one
-        #}
-        #else if (input$type_one == "Scaled") {
-        #    graph_one_alt
-        #}
+        graph_one
     })
     
     output$ans_one <- renderUI({
