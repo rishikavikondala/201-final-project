@@ -1,26 +1,17 @@
+source("../scripts/graphone.R")
 source("../scripts/graphtwo.R")
 library(plotly)
 library(ggplot2)
-# Find number of crimes per precinct from 2008-Present
-precinct_totals <- crime_data %>%
-    group_by(precinct) %>%
-    count()
-
-graph_one <- plot_ly(precinct_totals, labels = ~precinct, values = ~n, type = 'pie') %>%
-    layout(title = 'Crimes Per Precinct from 2008 to 2014',
-           xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-           yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
-
-graph_one_alt <- ggplot(
-    data = precinct_totals, aes(x = precinct, y = n, fill = precinct)) +
-    geom_bar(stat = "identity") +
-    coord_polar() +
-    ggtitle("Crimes Per Precinct from 2008 to Present Day")
 
 server <- function(input, output) {
     
     output$plot1 <- renderPlot({
-        graph_one_alt
+        if (input$plot_type == "Scaled pie") {
+            graph_one
+        }
+        else if (input$plot_type == "Barplot") {
+            graph_one_alt
+        }
     })
     
     output$ans_one <- renderUI({

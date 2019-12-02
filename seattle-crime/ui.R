@@ -60,7 +60,15 @@ ui <- fluidPage(
             crime (through 911 calls) in the areas where there is more criminal activity occuring.")
         ),
         tabPanel("Question 1",
-            plotOutput("plot1")
+                 sidebarLayout(
+                     sidebarPanel(
+                         radioButtons("plot_type", "Plot type", c("Barplot", "Scaled pie")),
+                     ),
+                     mainPanel(
+                         plotOutput("plot1"),
+                         uiOutput("ans_one")
+                     )
+                 )
         ),
         q2,
         tabPanel("Question 3",
