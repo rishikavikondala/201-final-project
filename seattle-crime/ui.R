@@ -17,6 +17,7 @@ q2 <- tabPanel("Question 2",
                ))
 
 ui <- fluidPage(
+    includeCSS("style.css"),
     navbarPage("Analysis of the City of Seattle's Police Reports",
         tabPanel("Project Overview", 
             div(strong(h3("Crime in Seattle")), style = "text-align: center;"),
