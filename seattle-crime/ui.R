@@ -42,15 +42,7 @@ ui <- fluidPage(
             lead one to undesired harm. Tracking where crimes are most likely to occur 
             helps us hone in on the more troublesome areas for civilians to especially 
             take caution in."),
-            h5("Question 2: ", strong(em("Which category of crime is most prevalent in the 
-            city of Seattle?"))),
-            p("Following the assessment of the location of crimes, the 
-            most prevalant types of crime must be anaylyzed hand in hand.  With insight on which 
-            categories of crimes occur most often, and where, innocent pedestrians will be able 
-            to properly prpare themselves for perhaps, a late night stroll. Understanding what 
-            kind of harm may come your way, could serve very beneficial for defending oneself, 
-            and avoiding running into danger."),
-            h5("Question 3: ", strong(em("Is there any correlation between the frequency of crimes 
+            h5("Question 2: ", strong(em("Is there any correlation between the frequency of crimes 
             and number of 911 calls throughout different areas of Seattle?"))),
             p("Last but not least, our project looks for the correlations
             between the number of 911 calls and frequency of crimes within Seattle. Police
@@ -58,7 +50,11 @@ ui <- fluidPage(
             that ultimately, waste everyone's time. Faulty or petty 911 calls could distract
             officers from very important tasks and even break a lead on actual crime. Patterns 
             found in the displayed data could reveal if there is enough action being taken against
-            crime (through 911 calls) in the areas where there is more criminal activity occuring.")
+            crime (through 911 calls) in the areas where there is more criminal activity occuring."),
+            h5("Question 3: ", strong(em("At what time of day do crimes occur most often?"))),
+            p("This question looks to determine which part of an average day has the highest amount
+            of criminal activity. Insights gained from answering this question can help identify
+            when it is not risky to be out and when it is better to remain in a safe place.")
         ),
         tabPanel("Question 1",
                  sidebarLayout(
@@ -83,14 +79,15 @@ ui <- fluidPage(
             )
         ),
         tabPanel("Summary Findings",
-            sidebarLayout(
-                sidebarPanel(
-                                  
-                ),
-                mainPanel(
-                    #plotOutput("plot2")
-                )
-        )
+            p("One major takeaway from this project is that the Northern precinct of Seattle
+            has the highest concentration of criminal activity in recent years. This insight
+            is meaningful because the polce department can use this knowledge to place more
+            officers in the Northern areas of Seattle. Another major takeaway from this 
+            project is that there is a trend with regards to the areas that have more criminal
+            activity and the areas with more 911 calls. This is a valuable insight since it
+            shows that people are being proactive in combating criminal activity and are 
+            taking the initiative to stand up for the safety of themselves and others. A 
+            final takeaway from this project is that []. This is significant because []. ")
         )
     )
 )
