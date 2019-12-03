@@ -82,14 +82,14 @@ ui <- fluidPage(
             )
         ),
         tabPanel("Summary Findings",
-            sidebarLayout(
-                sidebarPanel(
-                                  
-                ),
-                mainPanel(
-                    #plotOutput("plot2")
-                )
-        )
+            p("One major takeaway from this project is that the Northern precinct
+              of Seattle experiences the most criminal activity. This can be used
+              by police to concentrate higher levels of protection within the 
+              boundaries of this precinct. Another major takeaway from this project
+              is that areas in Seattle with higher levels of criminal activity also
+              have more recorded 911 calls. This is a positive sign because it
+              shows that people are being more proactive about suspicious and/or
+              illegal activity in more dangeous areas of Seattle."),
         )
     )
 )
