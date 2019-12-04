@@ -1,6 +1,6 @@
 library(dplyr)
 
-crime <- read.csv(file="data/crime_data.csv", stringsAsFactors = FALSE, 
+crime <- read.csv(file="../data/crime_data.csv", stringsAsFactors = FALSE, 
                   fileEncoding="UTF-8-BOM")
 
 len <- nchar(crime$Occurred.Date)[1]

@@ -1,4 +1,13 @@
 server <- function(input, output) {
+
+  output$crimepic <- renderImage({
+    return(list(
+        src = "www/crimescene.jpg",
+        filetype = "image/jpg",
+        alt = "This is a crime scene in Seattle."
+      ))
+  }, deleteFile = FALSE)
+
   output$plot1 <- renderPlot({
     if (input$plot_type == "Scaled pie") {
       graph_one
@@ -64,7 +73,9 @@ server <- function(input, output) {
 
   output$ans_three <- renderUI({
     header_three <- strong("Answer to question 3:")
-    content_three <- "This graph allows users to visualize the
+    content_three <- "This graph demonstrates that the downtown
+    commercial neighborhood has the most criminal activity in
+    recent years. This graph allows users to visualize the
     number of crimes reported in Seattle neighborhoods by the
     reported year of the crime. The latest year is 2019.
     The option to allow users to view the number of crimes by

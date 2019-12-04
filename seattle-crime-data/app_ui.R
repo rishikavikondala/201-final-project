@@ -1,15 +1,14 @@
 library(lintr)
 
 ui <- fluidPage(
-  includeCSS("seattle-crime-data/style.css"),
+  includeCSS("style.css"),
   navbarPage(
     "Analysis of the City of Seattle's Police Reports",
     tabPanel(
       "Project Overview",
       div(strong(h1("Crime in Seattle")), style = "text-align: center;"),
-      div(img(src = "seattle-crime-data/www/seattlecrime.png",
-          height = 250, width = 500),
-          style = "text-align: center;"),
+      imageOutput("crimepic"),
+      br(), br(), br(), br(), br(),
       h4("Explored Datasets:"),
       p("We utilized three different datasets released onto Seattle.gov
       by the Seattle Police Department: one regarding records of criminal
