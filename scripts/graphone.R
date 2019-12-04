@@ -9,7 +9,7 @@ library("styler")
 library("lintr")
 
 # Load data
-crime_data <- read.csv("../data/dataset_one.csv")
+crime_data <- read.csv("data/dataset_one.csv")
 
 # Find number of crimes per precinct from 2008-Present
 precinct_totals <- crime_data %>%

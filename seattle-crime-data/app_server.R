@@ -1,7 +1,3 @@
-source("../scripts/graphone.R")
-source("../scripts/graphtwo.R")
-source("../scripts/analysis.R")
-
 server <- function(input, output) {
   output$plot1 <- renderPlot({
     if (input$plot_type == "Scaled pie") {

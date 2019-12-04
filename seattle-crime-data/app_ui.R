@@ -1,13 +1,13 @@
 library(lintr)
 
 ui <- fluidPage(
-  includeCSS("style.css"),
+  includeCSS("seattle-crime-data/style.css"),
   navbarPage(
     "Analysis of the City of Seattle's Police Reports",
     tabPanel(
       "Project Overview",
       div(strong(h1("Crime in Seattle")), style = "text-align: center;"),
-      div(img(src = "seattlecrime.png",
+      div(img(src = "seattle-crime-data/www/seattlecrime.png",
           height = 250, width = 500),
           style = "text-align: center;"),
       h4("Explored Datasets:"),
