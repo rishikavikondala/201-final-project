@@ -74,7 +74,8 @@ ui <- fluidPage(
                         min = 0, max = 100, value = c(0, 100))
                      ),
                 mainPanel(
-                    plotOutput("plot2")
+                    plotOutput("plot2"),
+                    uiOutput("ans_two")
                 )
             )
         ),
@@ -125,6 +126,14 @@ server <- function(input, output) {
     output$plot2 <- renderPlot({
         scatter_pl <- filter_num_crime_detail(input$crim_range, input$call_range)
         scatter_pl
+    })
+    
+    output$ans_two <- renderUI({
+        header_two <- strong("Answer to question 2:")
+        content_two <- "Based on this scatterplot, it can be concluded that
+        the there is a direct correlation between the number of 911 calls and crimes \
+        recorded in the police data log in each sector of Seattle (excluding the outlier Queen)."
+        HTML(paste("<br/>", header_two, content_two, "<br/><br/>")) 
     })
     
     output$plot3 <- renderPlot({
