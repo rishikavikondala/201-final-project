@@ -32,23 +32,36 @@ ui <- fluidPage(
       Tracking where crimes are most likely to occur helps us hone in
       on the more troublesome areas for civilians to especially
       take caution in."),
-      h5("Question 2: ", strong(em("Is there a relationship between the frequency of crimes
-            and number of 911 calls throughout different areas of Seattle?"))),
-      p("Last but not least, our project looks for the correlations
-            between the number of 911 calls and frequency of crimes within Seattle. Police
-            departments often receive false alarms, unneccsary reports, and unrealistic claims
-            that ultimately, waste everyone's time. Faulty or petty 911 calls could distract
-            officers from very important tasks and even break a lead on actual crime. Patterns
-            found in the displayed data could reveal if there is enough action being taken against
-            crime (through 911 calls) in the areas where there is more criminal activity occuring."),
-      h5("Question 3: ", strong(em("How do the numbers of reported crimes in different
-            Seattle neighborhoods vary across several years?"))),
-      p("This question looks to determine not simply a general area in Seattle that is more
-            dangerous; rather, it is meant to identify which residential community the riskiest to
-            live in. Seattle is a highly populous city that is booming with career opportunities,
-            and people will want to make sure that they are entering a safe neighborhood if they
-            live there or move there for their job or education. Simultaneously, police would want
-            to provide more protection in these areas to fight back against criminal activity.")
+      h5("Question 2: ", strong(em(
+      "Is there a relationship between the frequency of crimes
+      and number of 911 calls throughout different areas of Seattle?"))),
+      p("Last but not least, our project looks for
+      the correlations between the number of 911 calls
+      and frequency of crimes within Seattle. Police
+      departments often receive false alarms, unneccsary
+      reports, and unrealistic claims that ultimately
+      waste everyone's time. Faulty or petty 911 calls
+      could distract officers from very important tasks
+      and even break a lead on actual crime. Patterns
+      found in the displayed data could reveal if there
+      is enough action being taken against crime
+      (through 911 calls) in the areas where there
+      is more criminal activity occuring."),
+      h5("Question 3: ", strong(em(
+      "How do the numbers of reported crimes in different
+      Seattle neighborhoods vary across several years?"))),
+      p("This question looks to determine not simply
+      a general area in Seattle that is more
+      dangerous; rather, it is meant to identify
+      which residential community the riskiest to
+      live in. Seattle is a highly populous city
+      that is booming with career opportunities,
+      and people will want to make sure that they
+      are entering a safe neighborhood if they live
+      there or move there for their job or education.
+      Simultaneously, police would want to provide
+      more protection in these areas to fight back
+      against criminal activity.")
     ),
     tabPanel(
       "Question 1",
@@ -73,8 +86,10 @@ ui <- fluidPage(
         sidebarPanel(
           h5(
             "Question 2: ",
-            strong(em("Is there a relationship between the frequency of crimes
-                        and number of 911 calls throughout different areas of Seattle?"))
+            strong(em(
+            "Is there a relationship between the frequency of crimes
+            and number of 911 calls throughout
+            different areas of Seattle?"))
           ),
           sliderInput(
             inputId = "crim_range",
@@ -100,8 +115,10 @@ ui <- fluidPage(
         sidebarPanel(
           h5(
             "Question 3: ",
-            strong(em("How do the numbers of reported crimes in
-                            different Seattle neighborhoods vary across several years?"))
+            strong(em(
+            "How do the numbers of reported crimes in
+            different Seattle neighborhoods
+            vary across several years?"))
           ),
           selectInput(
             "year_info",
