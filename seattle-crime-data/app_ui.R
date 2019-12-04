@@ -4,7 +4,7 @@ ui <- fluidPage(
     "Analysis of the City of Seattle's Police Reports",
     tabPanel(
       "Project Overview",
-      div(strong(h3("Crime in Seattle")), style = "text-align: center;"),
+      div(strong(h1("Crime in Seattle")), style = "text-align: center;"),
       div(img(src = "seattlecrime.png",
           height = 250, width = 500),
           style = "text-align: center;"),
