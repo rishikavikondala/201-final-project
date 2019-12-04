@@ -1,6 +1,6 @@
-source("../scripts/graphone.R")
-source("../scripts/graphtwo.R")
-source("../scripts/analysis.R")
+source("scripts/graphone.R")
+source("scripts/graphtwo.R")
+source("scripts/analysis.R")
 source("app_server.R")
 source("app_ui.R")
 
@@ -9,5 +9,6 @@ library(ggplot2)
 library(styler)
 library(lintr)
 library(shiny)
+library(rsconnect)
 
 shinyApp(ui = ui, server = server)

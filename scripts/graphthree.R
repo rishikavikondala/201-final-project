@@ -2,7 +2,7 @@ library(plotly)
 library(dplyr)
 
 # number of data
-data <- read.csv("../data/crime_data.csv")
+data <- read.csv("data/crime_data.csv")
 
 # total number of crime reported
 num_of_crime_reported <- nrow(data)
