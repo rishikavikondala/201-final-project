@@ -1,4 +1,6 @@
-library(lintr)
+source("../scripts/graphone.R")
+source("../scripts/graphtwo.R")
+source("../scripts/analysis.R")
 
 server <- function(input, output) {
   output$plot1 <- renderPlot({

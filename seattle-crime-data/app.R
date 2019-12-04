@@ -1,6 +1,3 @@
-source("../scripts/graphone.R")
-source("../scripts/graphtwo.R")
-source("../scripts/analysis.R")
 source("app_server.R")
 source("app_ui.R")
 
