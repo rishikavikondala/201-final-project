@@ -1,3 +1,5 @@
+library(lintr)
+
 server <- function(input, output) {
   output$plot1 <- renderPlot({
     if (input$plot_type == "Scaled pie") {

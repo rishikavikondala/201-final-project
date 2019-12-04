@@ -1,3 +1,5 @@
+library(lintr)
+
 ui <- fluidPage(
   includeCSS("style.css"),
   navbarPage(
