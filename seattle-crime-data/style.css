@@ -7,8 +7,14 @@ body {
 }
 
 h1 {
+  //added
   color: #355C7D;
   border-color: black;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
 }
 
 p {
