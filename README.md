@@ -1,6 +1,7 @@
 # Project Brainstorm
 
-Link to deployed GitHub web app: https://info201b-au19.github.io/final-rishikavikondala/
+Link to deployed GitHub web app for midpoint deliverable: https://info201b-au19.github.io/final-rishikavikondala/
+Link to final shinyapps web app: https://rishikavikondala.shinyapps.io/seattle-crime-data/
 
 ### **Domain of interest: Crime**
 
